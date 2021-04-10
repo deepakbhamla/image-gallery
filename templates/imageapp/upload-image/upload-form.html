@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div id="preview">
+ 
+    </div>
+    <div  class="wrapper " style="margin: 10px;">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="file-upload">
+                {{ form.image }}
+                <i class="fas fa-plus"></i>       
+            </div>
+            <div class="expMembers">
+                {{ form.tags }}
+            </div>
+            <Button class="btn btn-outline-dark text-center" type="submit">Upload</Button>
+        </form>
+        
+    </div>
+    
+    
+</div>
+

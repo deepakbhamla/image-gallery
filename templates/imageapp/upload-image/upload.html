@@ -1,0 +1,70 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+   Upload Image
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+{% endblock %}
+
+{% block body %}
+      <div class="desktop">
+        {% include "../basic/header.html" %}
+
+        {% include "../basic/login-modal.html" %}
+        {% include "../basic/signup-modal.html" %}
+
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 p-1"  >
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6  col-sm-12 col-12 pt-1 mt-2">
+                {% include "../basic/alert.html" %}
+                {% include "./upload-form.html" %}
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 pt-3">
+  
+              </div>
+            </div>
+          </div>
+
+      </div>     
+{% endblock %}
+
+{% block js%}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  function previewImages() {
+    var preview = document.querySelector('#preview');
+    if (this.files) {
+      [].forEach.call(this.files, readAndPreview);
+    }
+
+  function readAndPreview(file) {
+    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      return alert(file.name + " is not an image");
+    }
+  
+  var reader = new FileReader();
+  
+  reader.addEventListener("load", function() {
+    var image = new Image();
+    image.height = 100;
+    image.title  = file.name;
+    image.src    = this.result;
+    preview.appendChild(image);
+  });
+  
+  reader.readAsDataURL(file);
+  }
+}
+
+document.querySelector('#file-input').addEventListener("change", previewImages);
+
+</script>
+{% endblock %}

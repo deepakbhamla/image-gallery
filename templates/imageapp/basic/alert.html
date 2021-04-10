@@ -1,0 +1,11 @@
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible m-0 mb-4" runat ="server" id="modalEditError" visible ="false" >
+            <strong>{{ message }}</strong>
+            <button style="float: right;padding: 0px;" class="close btn" type="button" data-dismiss="alert">
+              <i style="font-size: 20px;" class="fa fa-close"></i>
+            </button>        
+        </div>
+    {% endfor %}
+{% endif %}
+

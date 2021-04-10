@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+   Home
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+{% endblock %}
+
+{% block body %}
+      <div class="desktop">
+        {% include "../basic/header.html" %}
+        
+        {% include "../basic/login-modal.html" %}
+        {% include "../basic/signup-modal.html" %}
+        
+        {% include "../basic/navigation.html" %}
+
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12  col-sm-12 col-12 pt-1">
+                  <div style="width: 68%;margin: auto;">
+                    {% include "../basic/alert.html" %}
+                  </div>
+                {% include "./gallery.html" %}
+                {% include "./pagination.html" %}
+
+              </div>
+            </div>
+          </div>
+
+      </div>     
+{% endblock %}
+{% block js %}
+ 
+{% endblock %}

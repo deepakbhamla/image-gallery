@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #222222!important;;">
+    <div class="container">
+      <a class="navbar-brand" href="#">TutorBin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'upload-image' %}">upload</a>
+          </li>
+        </ul>
+        
+          <form class="nav-item searchbar m-0 p-0" method="get">
+            <input class="search_input " name="q" type="text" placeholder="Search..."/>
+             <a  class="" style="margin:0px 0px;padding:0px;">
+              <i style="color: #fff; font-size: 15px; cursor: pointer;" class="fa fa-search"></i>
+             </a>
+          </form>          
+          {% if user.is_authenticated %}
+          <li class="">
+            <a class="text-light" style="text-decoration: none;cursor: pointer; " href="/logout" >
+              Logout/ {{user.first_name}}
+            </a>
+        </li>   
+
+          {% else %}
+             <li class="">
+                <a class="text-light" style="text-decoration: none;cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
+                  Login
+                </a>
+            </li>   
+            <li class="">
+              <a  class="text-light" style="text-decoration: none;cursor: pointer;" data-toggle="modal" data-target="#exampleModal1">
+                Signup
+              </a>
+            </li>      
+      {% endif %}
+    </div>
+    </div>
+  </nav>

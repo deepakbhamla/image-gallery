@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+   Edit Image
+{% endblock %}
+
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+  <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+
+{% endblock %}
+
+{% block body %}
+      <div class="desktop">
+        {% include "../basic/header.html" %}
+
+        {% include "../basic/login-modal.html" %}
+        {% include "../basic/signup-modal.html" %}
+
+ 
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 p-1"  >
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6  col-sm-12 col-12 pt-1 mt-5">
+                <div class="p-2 explore-header sticky-top" id="" role="alert">
+                  <p>
+                    Hello <strong> {{firstname}} </strong>
+                  </p>
+                  <hr>
+                  <form action="/auth" method="post">
+                     {% csrf_token %}
+                      <input class="mb-4 auth-input" type="text" name="otp1" id="otp1" placeholder="One Time Password" required>       
+                      <input class="mb-4 auth-input" type="password" name="password1" id="password1" placeholder="password" required>
+                     <input  class="mb-4 auth-input" type="password" name="password2" id="password2" placeholder="confirm password" required >
+                     <button  style="display: block;margin: auto;"  type="submit" class="btn btn-outline-dark mt-4"  type="button" style="width: 30%;margin: auto; font-size: 14px;">
+                      SIGN UP
+                     </button>
+                  </form>
+                     <span class="mt-4 text-danger text-center">*check terminal for otp</span>
+                </div>    
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 pt-3">
+  
+              </div>
+            </div>
+          </div>
+
+      </div>     
+{% endblock %}
+
+{% block js%}
+{% endblock %}

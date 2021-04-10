@@ -1,0 +1,10 @@
+.auth-input{
+    display: block;
+    width: 40%;
+    margin: auto;
+    padding: 8px;
+    outline: none;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

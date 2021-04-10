@@ -1,0 +1,15 @@
+<div class="navigation sticky-top" >
+    <ul>
+        <a style='text-decoration: none;' href="/" >
+            <li>Home</li>
+        </a>
+
+        {% for item in navigation %}
+        <a style='text-decoration: none;' href="{{item.slug}}" >
+            <li>{{item.tag_name}}</li>
+        </a>
+
+        {% endfor %}
+
+    </ul>
+</div>

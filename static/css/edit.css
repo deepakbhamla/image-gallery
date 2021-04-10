@@ -1,0 +1,10 @@
+.btn-box{
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.btn-box .btn{
+display: inline;
+}
+

@@ -1,0 +1,28 @@
+<section class="container">
+  {% if data %}
+	<div class="row ">
+  {% for item in data %}
+	  	<div class="col-lg- col-md-4 col-xs-6 thumb ">
+			  	<figure  class="">
+             <a href="edit/{{item.pk}}">
+               <img class="img-fluid img-thumbnail" style="max-height: 400px;" src="{{item.image.url}}" alt="Random Image">
+             </a>
+          </figure>
+          <div class="tags" style="display: flex;">
+            {% for tag in item.tags.all %} 
+              <a class="p-0 m-0" style="text-decoration: none; font-size: 13px;padding: 4px 8px;margin: 0px 5px; display: inline;" href="{{tag.slug}}" >
+                  <li class="text-muted" style="list-style-type: none; margin-right: 4px;">{{tag.tag_name}}/</li>
+              </a>     
+            {% endfor %}
+          </div>
+		 </div>
+  {% endfor %}
+	</div>
+  {% else %}
+   {% load static %}
+   <div class="align-middle mt-5"  style="text-align: center;">
+      <h3 class="text-muted">no image available</h3>
+      <a href='/upload-image' class="btn btn-outline-dark text-center mt-3">Upload Image</a>
+   </div>
+  {% endif %}
+</section>

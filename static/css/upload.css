@@ -1,0 +1,104 @@
+.wrapper{
+    cursor: pointer;
+}
+.wrapper .file-upload {
+    height: 120px;
+    width: 128px;
+    position: relative;
+    display: flex;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-style:dashed;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+
+}
+
+.wrapper .file-upload input[type='file'] {
+    height: 200px;
+    width: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.wrapper .file-upload:hover {
+    background-position: 0 -100%;
+    color: #333;
+    cursor: pointer;
+}
+
+
+#preview img{
+    border: 1px solid lightgrey;
+    padding: 2px;
+    margin: 10px;
+    width: 129px;
+    height: 120px;
+}
+
+.slect-input ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0px;
+}
+
+
+
+
+.expMembers ul
+{
+  list-style: none;
+  padding: 20px;
+}
+
+.expMembers li{
+   display: inline;
+   margin: 5px!important;;
+}
+
+.expMembers li label{
+  display: inline-block;
+    background-color: #fafafa;
+    border: 1px solid rgba(139, 139, 139, .3);
+    color: #333;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+ 
+.expMembers ul li label{
+   padding: 8px 12px;
+    cursor: pointer;
+}
+
+.expMembers ul li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    transition: transform .3s ease-in-out;
+}
+
